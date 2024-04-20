@@ -4,11 +4,49 @@ import pickle
 import matplotlib.pyplot as plt
 
 # Load CSS for styling
-with open('./chart.css') as f:
-    css = f.read()
+# with open('./chart.css') as f:
+#     css = f.read()
 
 st.set_page_config(layout="wide")
-st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
+# st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
+st.markdown(f'
+<style>.st-emotion-cache-j78z8c i {
+  height: 25px;
+  width: 25px;
+  border-top-color: #ff5a5a;
+}
+.st-emotion-cache-1y4p8pa {
+  width: 100%;
+  padding: 1rem;
+  max-width: 76%;
+}
+.st-emotion-cache-18ni7ap, .st-emotion-cache-1629p8f a, .stAlert, .st-emotion-cache-9aoz2h:hover .e1vs0wn31 {
+  display: none;
+}
+.st-emotion-cache-gh2jqd {
+  padding-top: 0;
+}
+#ipl-win-predictor span {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.st-bb {
+  cursor: pointer !important;
+  user-select: none !important;
+}
+
+.st-emotion-cache-1njjmvq {
+  gap: 0rem;
+}
+.st-emotion-cache-z5fcl4 {
+  padding: 0 !important;
+  padding-left: 3rem !important;
+  padding-right: 3rem !important;
+}
+img{
+  padding-right: 2rem !important;
+}
+</style>', unsafe_allow_html=True)
 
 # Load the pre-trained model and match data
 pipe = pickle.load(open('../Model/logistic_regression.pkl', 'rb')) 
