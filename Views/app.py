@@ -1,8 +1,14 @@
 import streamlit as st
 import pickle
 import pandas as pd
+from pathlib import Path
 
-with open('./style.css') as f:
+# Get the path of the current directory
+current_directory = Path(__file__).resolve().parent
+
+# Load CSS for styling
+css_file_path = current_directory / "style.css"
+with open(css_file_path) as f:
     css = f.read()
 
 st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
@@ -23,7 +29,8 @@ teams = [
 cities = ['Hyderabad', 'Bangalore', 'Mumbai', 'Indore', 'Kolkata', 'Delhi', 'Jaipur', 'Chennai', 'Ahmedabad', 'Dharamsala', 'Mohali', 'Lucknow']
 
 
-pipe = pickle.load(open('../Model/logistic_regression.pkl', 'rb'))
+model_file_path = current_directory.parent / "Model" / "logistic_regression.pkl"
+pipe = pickle.load(open(model_file_path, 'rb')) 
 
 def limit_overs_input():
     current_overs = st.session_state.overs
