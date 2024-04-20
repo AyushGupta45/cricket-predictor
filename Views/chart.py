@@ -25,7 +25,7 @@ final_match_data = final_match_data.sort_values(by='Match_Date', ascending=False
 
 final_match_data['Match_Format'] = final_match_data['Match_Date'].dt.strftime('%d-%m-%Y') + ': ' + final_match_data['Batting_Team'] + ' vs ' + final_match_data['Bowling_Team']
 
-st.title('Cricket Match Prediction App')
+st.title('Past Matches Analysis and Visualization Tool')
 
 years = final_match_data['Match_Date'].dt.year.unique()
 

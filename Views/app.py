@@ -44,7 +44,7 @@ def limit_overs_input():
 if 'overs' not in st.session_state:
     st.session_state['overs'] = 15.0
 
-st.title('IPL Win Predictor')
+st.title('Live Match Prediction Tool')
 
 col1, col2, col3 = st.columns(3)
 
