@@ -9,8 +9,8 @@ import matplotlib.pyplot as plt
 
 st.set_page_config(layout="wide")
 # st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
-st.markdown(f'
-<style>.st-emotion-cache-j78z8c i {
+st.markdown(
+  f'<style>.st-emotion-cache-j78z8c i {
   height: 25px;
   width: 25px;
   border-top-color: #ff5a5a;
