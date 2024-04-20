@@ -2,17 +2,24 @@ import streamlit as st
 import pandas as pd
 import pickle
 import matplotlib.pyplot as plt
+from pathlib import Path
+
+current_directory = Path(__file__).resolve().parent
 
 # Load CSS for styling
-with open('./chart.css') as f:
+css_file_path = current_directory / "chart.css"
+with open(css_file_path) as f:
     css = f.read()
 
 st.set_page_config(layout="wide")
 st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
 
 # Load the pre-trained model and match data
-pipe = pickle.load(open('../Model/logistic_regression.pkl', 'rb')) 
-final_match_data = pd.read_csv('../Dataset/final_match_data_with_id.csv')
+model_file_path = current_directory.parent / "Model" / "logistic_regression.pkl"
+pipe = pickle.load(open(model_file_path, 'rb')) 
+
+data_file_path = current_directory.parent / "Dataset" / "final_match_data_with_id.csv"
+final_match_data = pd.read_csv(data_file_path)
 final_match_data['Match_Date'] = pd.to_datetime(final_match_data['Match_ID'].str.split('_').str[0], format='%Y-%m-%d')
 final_match_data = final_match_data.sort_values(by='Match_Date', ascending=False)
 
