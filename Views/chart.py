@@ -10,43 +10,44 @@ import matplotlib.pyplot as plt
 st.set_page_config(layout="wide")
 # st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
 st.markdown(
-  f'<style>.st-emotion-cache-j78z8c i {
-  height: 25px;
-  width: 25px;
-  border-top-color: #ff5a5a;
-}
-.st-emotion-cache-1y4p8pa {
-  width: 100%;
-  padding: 1rem;
-  max-width: 76%;
-}
-.st-emotion-cache-18ni7ap, .st-emotion-cache-1629p8f a, .stAlert, .st-emotion-cache-9aoz2h:hover .e1vs0wn31 {
-  display: none;
-}
-.st-emotion-cache-gh2jqd {
-  padding-top: 0;
-}
-#ipl-win-predictor span {
-  text-align: center;
-  margin-bottom: 10px;
-}
-.st-bb {
-  cursor: pointer !important;
-  user-select: none !important;
-}
+    f'<style>.st-emotion-cache-j78z8c i {{'
+    f'height: 25px;'
+    f'width: 25px;'
+    f'border-top-color: #ff5a5a;'
+    f'}}'
+    f'.st-emotion-cache-1y4p8pa {{'
+    f'width: 100%;'
+    f'padding: 1rem;'
+    f'max-width: 76%;'
+    f'}}'
+    f'.st-emotion-cache-18ni7ap, .st-emotion-cache-1629p8f a, .stAlert, .st-emotion-cache-9aoz2h:hover .e1vs0wn31 {{'
+    f'display: none;'
+    f'}}'
+    f'.st-emotion-cache-gh2jqd {{'
+    f'padding-top: 0;'
+    f'}}'
+    f'#ipl-win-predictor span {{'
+    f'text-align: center;'
+    f'margin-bottom: 10px;'
+    f'}}'
+    f'.st-bb {{'
+    f'cursor: pointer !important;'
+    f'user-select: none !important;'
+    f'}}'
 
-.st-emotion-cache-1njjmvq {
-  gap: 0rem;
-}
-.st-emotion-cache-z5fcl4 {
-  padding: 0 !important;
-  padding-left: 3rem !important;
-  padding-right: 3rem !important;
-}
-img{
-  padding-right: 2rem !important;
-}
-</style>', unsafe_allow_html=True)
+    f'.st-emotion-cache-1njjmvq {{'
+    f'gap: 0rem;'
+    f'}}'
+    f'.st-emotion-cache-z5fcl4 {{'
+    f'padding: 0 !important;'
+    f'padding-left: 3rem !important;'
+    f'padding-right: 3rem !important;'
+    f'}}'
+    f'img{{'
+    f'padding-right: 2rem !important;'
+    f'}}'
+    f'</style>', unsafe_allow_html=True)
+
 
 # Load the pre-trained model and match data
 pipe = pickle.load(open('../Model/logistic_regression.pkl', 'rb')) 
