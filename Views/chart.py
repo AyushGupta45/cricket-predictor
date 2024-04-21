@@ -69,7 +69,7 @@ for index, row in input_df.iterrows():
     predictions_win.append(win_probability)
     predictions_loss.append(loss_probability)
 
-input_df = input_df[['runs_left', 'balls_left', 'wickets_left']]
+input_df = input_df[['runs_left', 'balls_left', 'wickets_left', 'Total_Runs_x']]
 
 win_column_name = f"{selected_match_data['Bowling_Team'].iloc[0]} Win %"
 loss_column_name = f"{selected_match_data['Batting_Team'].iloc[0]} Win %"
@@ -78,6 +78,7 @@ input_df[win_column_name] = predictions_win
 input_df[loss_column_name] = predictions_loss
 
 input_df['Overs'] = (20 - input_df['balls_left'] // 6)
+target = input_data['Total_Runs_x'].iloc[0] + 1
 
 # Plotting with Matplotlib
 fig, ax = plt.subplots(figsize=(16, 5))
@@ -85,7 +86,7 @@ ax.plot(input_df['Overs'], input_df[win_column_name], label=f"{selected_match_da
 ax.plot(input_df['Overs'], input_df[loss_column_name], label=f"{selected_match_data['Batting_Team'].iloc[0]} Win %", linewidth=2)
 ax.set_xlabel('Overs')
 ax.set_ylabel('Runs Left/Win %')
-ax.set_title('Runs Left vs Overs')
+ax.set_title(f'Target: {target}')
 ax.set_xticks(range(0, 21))
 ax.set_yticks(range(0, 101, 10))
 ax.legend()
