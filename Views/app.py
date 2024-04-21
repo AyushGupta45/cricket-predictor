@@ -16,7 +16,7 @@ st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
 teams = [
     'Sunrisers Hyderabad',
     'Mumbai Indians',
-    'Royal Challengers Bangalore',
+    'Royal Challengers Bengaluru',
     'Kolkata Knight Riders',
     'Punjab Kings',
     'Chennai Super Kings',
